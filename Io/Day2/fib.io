@@ -9,13 +9,19 @@ fibRecur := method(num,
 
 #iterative solution (for,while etc)
 fibLoop := method(num,
-	last1 := 0
-	last2 := 0
-	for(i, 1, num-1,
-		last2 = last1
-		last1 = i
+
+	if(num == 0, 0, ( 
+		prev1 := 1
+		prev2 := 0
+		temp := 0
+		for(i, 2, num,
+			temp = prev1+prev2	
+			prev2 = prev1
+			prev1 = temp
+			)
+		prev1
+		)
 	)
-	last2+last1
 )
 
 
@@ -43,3 +49,4 @@ if(fibLoop(2) == 1, testPassed, testFailed)
 if(fibLoop(3) == 2, testPassed, testFailed)
 "fib(4) == 3" print
 if(fibLoop(4) == 3, testPassed, testFailed)
+
