@@ -1,4 +1,9 @@
-% a function that uses recursion to return the number of words in a string (string is treated as a list of chars)
+% write a function that uses recursion to return the number of words in a string (string is treated as a list of chars)
+
+% usage:
+% c(words).
+% words:count("Never send a human to do a machine's job").
+
 -module(words).
 -export([count/1]).
 
